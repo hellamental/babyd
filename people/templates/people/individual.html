@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+</style>
+</head>
+<body>
+
+<h1>{{ person.first_name}} {{person.last_name}} - {{person.relationship}}</h1>
+
+<ul>
+{% for media in media_list %}
+    <li>{{ media.file_name}} - {{media.uploaded_image}}</li>
+{% endfor %}
+</ul>
+
+
+<a href="{% url 'name' %}">Go to Name Form</a>
+</body>
+</html>
+ 

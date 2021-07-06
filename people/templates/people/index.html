@@ -1,0 +1,36 @@
+{% load static %}
+{{ people }}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("{% static 'people/hundredacrewood2.jpg' %}");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+
+</style>
+</head>
+<body>
+
+ <!--<img src="{% static 'people/booktree.jpg' %}" alt="My image">-->
+
+<h1>Family Members</h1>
+<ul>
+{% for people in people_list %}
+    <li><a href="{% url 'individual' people.id %}"> {{ people.first_name}} {{people.last_name}} - {{people.relationship}}</a></li>
+{% endfor %}
+</ul>
+
+
+</body>
+</html>
