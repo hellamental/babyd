@@ -1,9 +1,14 @@
 {% load static %}
+{{ people }}
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Page Title</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+<title>Individual</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -14,8 +19,72 @@ body {
 </style>
 </head>
 <body>
+<header>
+  <div class="collapse bg-dark" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4 class="text-white">About</h4>
+          <p class="text-muted">This is where you should upload and share everthing you want the baby to see! Everything from you're rendition of a favourite lullaby, pictures, links to stories etc etc..</p>
+
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4">
+          <h4 class="text-white">Have Questions</h4>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white">Send me an Email</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <img src="{% static 'people/newbornwhite.png' %}" width="50"/>
+        <strong>BABYDAWSON.COM</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+
+<main>
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Hi {{ person.first_name}}!</h1>
+        <p class="lead text-muted">We love you and want to stay connected with you no matter where you are in the world! We've created your own little page to upload anything you might like to share with {BABYNAME}! </p>
+        <p>
+          <a href="#" class="btn btn-primary my-2">Upload a File</a>
+          <a href="#" class="btn btn-secondary my-2">Leave a Comment</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+<form>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
 
 <h1>{{ person.first_name}} {{person.last_name}} - {{person.relationship}}</h1>
+
+
 
 <form action="" method="post" enctype="multipart/form-data">
     {% csrf_token %}
@@ -26,14 +95,26 @@ body {
 <ul>
 {% for media in media_list %}
     <li>{{ media.file_name}} - {{media.uploaded_image}}</li>
+    <img src="{{ media.uploaded_image.url}}" alt="connect" style="max-height:300px">
 {% endfor %}
 </ul>
 
 
 
-
+<button type="button" class="btn btn-primary">Primary</button>
 
 <a href="{% url 'index' %}">Return to Home</a>
 </body>
 </html>
+
+
+<!-- this section starts the album-->
+  
+
+</main>
+
+
  
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!--<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>-->
