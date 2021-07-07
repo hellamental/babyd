@@ -17,6 +17,12 @@ body {
 
 <h1>{{ person.first_name}} {{person.last_name}} - {{person.relationship}}</h1>
 
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
+
 <ul>
 {% for media in media_list %}
     <li>{{ media.file_name}} - {{media.uploaded_image}}</li>
@@ -24,7 +30,10 @@ body {
 </ul>
 
 
-<a href="{% url 'name' %}">Go to Name Form</a>
+
+
+
+<a href="{% url 'index' %}">Return to Home</a>
 </body>
 </html>
  
