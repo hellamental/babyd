@@ -4,25 +4,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Page Title</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+
+
+
+<title>Individual</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-image: url("{% static 'people/hundredacrewood2.jpg' %}");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100% 100%;
 }
-
-
 </style>
 </head>
 <body>
-
+<header>
+  {% include 'people/navbar.html' %}
+</header>
  <!--<img src="{% static 'people/booktree.jpg' %}" alt="My image">-->
+<!--<h1> Hello, {{ user.username|default:'Guest' }}! </h1> -->
+
 
 <h1>Family Members</h1>
 <ul>
@@ -31,6 +36,26 @@ body {
 {% endfor %}
 </ul>
 
+<!--
+<h1>Users</h1>
+<ul>
+{% for user in user_list %}
+  <li> {{ user.username }} </li>
+{% endfor %}
+</ul>
+-->
 
 </body>
 </html>
+
+
+<!-- this section starts the album-->
+  
+
+</main>
+
+
+ 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!--<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>-->

@@ -1,0 +1,17 @@
+Project Charter
+
+
+Pretty Simple note system - need it to keep track of where i'm up to otherwise i'll lose my cool
+
+
+Utilise the user model
+
+Currently have a model that uses a custom 'individual' model as the main user. 
+I need to swap it out for the user model.
+
+
+Tidy up your html template baseline also.
+
+homepage aside - extend from Base in order to avoiid annoying duplication and shit for bootstrap
+
+Cheerrrrr
