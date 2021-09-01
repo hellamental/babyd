@@ -11,7 +11,7 @@
 
 
 
-<title>Individual</title>
+<title>Individuals</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -29,6 +29,54 @@ body {
 <!--<h1> Hello, {{ user.username|default:'Guest' }}! </h1> -->
 
 
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      
+      <h1></h1>
+      <img src="{% static 'people/sketch2.jpg' %}" width="300" height="250"/>
+      <h1></h1>
+        <ul>
+        {% for people in people_list %}
+        {% if people.relationship == 'Immediate' %}
+            <li><a href="{% url 'individual' people.id %}"> {{ people.first_name}} {{people.last_name}}</a></li>
+        
+        {% endif %}
+        {% endfor %}
+        </ul>
+    </div>
+    <div class="col-sm">
+      
+      <h1></h1>
+      <img src="{% static 'people/sketch3.jpg' %}" width="300" height="250"/>
+      <h1></h1>  
+        <ul>
+        {% for people in people_list %}
+        {% if people.relationship == 'Distant' %}
+            <li><a href="{% url 'individual' people.id %}"> {{ people.first_name}} {{people.last_name}}</a></li>
+        
+        {% endif %}
+        {% endfor %}
+        </ul>
+
+    </div>
+    <div class="col-sm">
+      
+      <h1></h1>
+      <img src="{% static 'people/sketch4.jpg' %}" width="300" height="250"/>
+      <h1></h1>
+        <ul>
+        {% for people in people_list %}
+        {% if people.relationship == 'Friend' %}
+            <li><a href="{% url 'individual' people.id %}"> {{ people.first_name}} {{people.last_name}}</a></li>
+        {% endif %}
+        {% endfor %}
+        </ul>
+
+    </div>
+  </div>
+</div>
+<!--
 <h1>Family Members</h1>
 <ul>
 {% for people in people_list %}
@@ -36,7 +84,7 @@ body {
 {% endfor %}
 </ul>
 
-<!--
+
 <h1>Users</h1>
 <ul>
 {% for user in user_list %}

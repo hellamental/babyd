@@ -3,14 +3,9 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 
 RELATIONSHIP_CHOICES = (
-		('Mother', 'Mother'),
-		('Father', 'Father'),
-		('Aunty', 'Aunty'),
-		('Uncle', 'Uncle'),
-		('Cousin', 'Cousin'),
-		('Grandmother','Grandmother'),
-		('Grandfather','Grandfather'),
-		('2nd Cousin', '2nd Cousin'),
+		('Immediate', 'Immediate'),
+		('Distant', 'Distant'),
+		('Friend', 'Friend'),
 	)
 
 class People(models.Model):
