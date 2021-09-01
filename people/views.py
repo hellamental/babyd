@@ -57,21 +57,35 @@ def get_individual2(request, person_id):
 	#if this is a POST request we need to process the form data
 	if request.method == 'POST':
 		#create a form instance and populate it with the data from the request
-		form = MediaForm(request.POST, request.FILES)
+		mediaform = MediaForm(request.POST, request.FILES)
 		#check whether it's valid:
-		if form.is_valid():
+		if mediaform.is_valid():
 			#process data in the form.cleaned_data as required
 			#...
 			#redirect to a new URL:
-			form.save()
+			mediaform.save()
 			print('responseredirect')
 			return HttpResponseRedirect(reverse('individual', args=(person.id,)))
 
 	#if a GET (or any other method) we'll create a blank form.
 	else:
-		form = MediaForm()
+		mediaform = MediaForm()
 
-	context = {'person': person,'media_list': media_list, 'image_list':image_list, 'form':form}
+	if request.method == 'POST':
+		imageform = ImageForm(request.POST, request.FILES)
+		if imageform.is_valid():
+			#process data in the form.cleaned_data as required
+			#...
+			#redirect to a new URL:
+			imageform.save()
+			print('responseredirect')
+			return HttpResponseRedirect(reverse('individual', args=(person.id,)))
+
+	#if a GET (or any other method) we'll create a blank form.
+	else:
+		imageform = ImageForm()
+
+	context = {'person': person,'media_list': media_list, 'image_list':image_list, 'mediaform':mediaform, 'imageform':imageform}
 	return render(request, 'people/individual.html', context)
 
 def comments(request):

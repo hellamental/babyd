@@ -92,25 +92,25 @@
           <div class="form-group row">
             <label class="col-sm-5 col-form-label" for="">Person</label>
               <div class="col-sm-5">
-                {{ form.person }}
+                {{ mediaform.person }}
             </div>
           </div>   
           <div class="form-group row">
             <label class="col-sm-5 col-form-label" for="">File Name</label>
               <div class="col-sm-5">
-                {{ form.file_name }}
+                {{ mediaform.file_name }}
             </div>
           </div>   
           <div class="form-group row">
             <label class="col-sm-5 col-form-label" for="">Uploaded File</label>
               <div class="col-sm-5">
-                {{ form.uploaded_file }}
+                {{ mediaform.uploaded_file }}
             </div>
           </div>   
           <div class="form-group row">
             <label class="col-sm-5 col-form-label" for="">File Information</label>
               <div class="col-sm-5">
-                {{ form.file_information }}
+                {{ mediaform.file_information }}
             </div>
           </div>     
       </div>
@@ -137,35 +137,33 @@
           <div class="form-group row">
             <label class="col-sm-5 col-form-label" for="">Person</label>
               <div class="col-sm-5">
-                {{ ImageForm.person }}
+                {{ imageform.person }}
             </div>
           </div>   
           <div class="form-group row">
             <label class="col-sm-5 col-form-label" for="">Image Title</label>
               <div class="col-sm-5">
-                {{ ImageForm.image_title }}
+                {{ imageform.image_title }}
             </div>
           </div>   
           <div class="form-group row">
             <label class="col-sm-5 col-form-label" for="">Choose Image</label>
               <div class="col-sm-5">
-                {{ ImageForm.uploaded_image}}
+                {{ imageform.uploaded_image}}
             </div>
           </div>   
           <div class="form-group row">
             <label class="col-sm-5 col-form-label" for="">Image Caption</label>
               <div class="col-sm-5">
-                {{ ImageForm.image_caption }}
+                {{ imageform.image_caption }}
             </div>
           </div>
-
-          <input type="submit" value="Submit">
-        </form>
-      </div>
-      <div class="modal-footer">
+          <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div></form>
       </div>
+      
     </div>
   </div>
 </div>
