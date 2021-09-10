@@ -83,16 +83,16 @@ WSGI_APPLICATION = 'babydawson.wsgi.application'
 #        }
 #    }
 #else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'babyd',
-            'USER': 'mitch',
-            'PASSWORD': 'Babu$hka2!',
-            'HOST': 'localhost',
-            'PORT': '',
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'babyd',
+        'USER': 'mitch',
+        'PASSWORD': 'Babu$hka2!',
+        'HOST': 'localhost',
+        'PORT': '',
     }
+}
 
 
 
