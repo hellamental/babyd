@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-&2h&nrdber^$ku$glfbkj9t+3oc(wxzcah@^*1@wm!qlkms=#$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['139.59.118.143']
+ALLOWED_HOSTS = ['127.0.0.1','139.59.118.143']
 
 
 # Application definition
@@ -75,14 +75,14 @@ WSGI_APPLICATION = 'babydawson.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-if DEBUG == True:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
-else:
+#if DEBUG == True:
+#    DATABASES = {
+#       'default': {
+#            'ENGINE': 'django.db.backends.sqlite3',
+#            'NAME': BASE_DIR / 'db.sqlite3',
+#        }
+#    }
+#else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
