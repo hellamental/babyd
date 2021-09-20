@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-&2h&nrdber^$ku$glfbkj9t+3oc(wxzcah@^*1@wm!qlkms=#$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','babydawson.com','miscpursuits.com','139.59.118.143']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -76,23 +76,23 @@ WSGI_APPLICATION = 'babydawson.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 #if DEBUG == True:
-#    DATABASES = {
-#       'default': {
-#            'ENGINE': 'django.db.backends.sqlite3',
-#            'NAME': BASE_DIR / 'db.sqlite3',
-#        }
-#    }
-#else:
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'babyd',
-        'USER': 'mitch',
-        'PASSWORD': 'Babu$hka2!',
-        'HOST': 'localhost',
-        'PORT': '',
+       'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+#else:
+#    DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'NAME': 'babyd',
+#        'USER': 'mitch',
+#        'PASSWORD': 'Babu$hka2!',
+#       'HOST': 'localhost',
+#        'PORT': '',
+#    }
+#}
 
 
 
@@ -133,9 +133,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, "static_my_proj",)
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
